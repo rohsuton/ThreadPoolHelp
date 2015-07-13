@@ -7,14 +7,14 @@
  * Date: 2015年7月13日 上午10:40:16
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp.manager;
+package com.luoxudong.app.threadpool.manager;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import android.annotation.SuppressLint;
 
-import com.luoxudong.app.threadpoolhelp.interfaces.IThreadPoolManager;
+import com.luoxudong.app.threadpool.interfaces.IThreadPoolManager;
 
 /** 
  * ClassName: ThreadPoolManager

@@ -7,7 +7,7 @@
  * Date: 2015年7月13日 上午10:37:47
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp.constant;
+package com.luoxudong.app.threadpool.constant;
 
 /** 
  * ClassName: ThreadPoolConst

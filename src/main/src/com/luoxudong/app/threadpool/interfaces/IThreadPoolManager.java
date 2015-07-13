@@ -7,10 +7,10 @@
  * Date: 2015年7月13日 上午10:38:28
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp.interfaces;
+package com.luoxudong.app.threadpool.interfaces;
 
-import com.luoxudong.app.threadpoolhelp.manager.BaseThreadPool;
-import com.luoxudong.app.threadpoolhelp.manager.ThreadTaskObject;
+import com.luoxudong.app.threadpool.manager.BaseThreadPool;
+import com.luoxudong.app.threadpool.manager.ThreadTaskObject;
 
 /** 
  * ClassName: IThreadPoolManager

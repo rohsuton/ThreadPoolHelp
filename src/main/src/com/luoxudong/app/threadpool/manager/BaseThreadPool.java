@@ -7,7 +7,7 @@
  * Date: 2015年7月13日 上午10:39:12
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp.manager;
+package com.luoxudong.app.threadpool.manager;
 
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;

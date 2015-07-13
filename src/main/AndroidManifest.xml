@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.luoxudong.app.threadpoolhelp"
+    package="com.luoxudong.app.threadpool"
     android:versionCode="1"
     android:versionName="V1.0" >
 

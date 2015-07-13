@@ -7,11 +7,11 @@
  * Date: 2015年7月13日 上午10:37:27
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp;
+package com.luoxudong.app.threadpool;
 
 import com.luoxudong.app.singletonfactory.SingletonFactory;
-import com.luoxudong.app.threadpoolhelp.interfaces.IThreadPoolManager;
-import com.luoxudong.app.threadpoolhelp.manager.ThreadPoolManager;
+import com.luoxudong.app.threadpool.interfaces.IThreadPoolManager;
+import com.luoxudong.app.threadpool.manager.ThreadPoolManager;
 
 /** 
  * ClassName: ThreadPoolFactory

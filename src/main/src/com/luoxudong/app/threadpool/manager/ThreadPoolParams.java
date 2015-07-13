@@ -7,9 +7,9 @@
  * Date: 2015年7月13日 上午10:41:14
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp.manager;
+package com.luoxudong.app.threadpool.manager;
 
-import com.luoxudong.app.threadpoolhelp.constant.ThreadPoolConst;
+import com.luoxudong.app.threadpool.constant.ThreadPoolConst;
 
 
 /** 

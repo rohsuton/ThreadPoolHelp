@@ -7,10 +7,10 @@
  * Date: 2015年7月13日 上午10:42:59
  * Version: 1.0
  */
-package com.luoxudong.app.threadpoolhelp.manager;
+package com.luoxudong.app.threadpool.manager;
 
-import com.luoxudong.app.threadpoolhelp.ThreadPoolFactory;
-import com.luoxudong.app.threadpoolhelp.constant.ThreadPoolConst;
+import com.luoxudong.app.threadpool.ThreadPoolFactory;
+import com.luoxudong.app.threadpool.constant.ThreadPoolConst;
 
 /** 
  * ClassName: ThreadTaskObject
