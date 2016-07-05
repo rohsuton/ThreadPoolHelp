@@ -10,6 +10,7 @@
 package com.luoxudong.app.threadpool.manager;
 
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -27,8 +28,8 @@ public class BaseThreadPool extends ThreadPoolExecutor {
 		super(threadPoolParamter.getCorePoolSize(), 
 			  threadPoolParamter.getMaximumPoolSize(), 
 			  threadPoolParamter.getKeepAliveTime(), 
-			  TimeUnit.MILLISECONDS, //线程池维护线程所允许的空闲时间的单位
-			  new LinkedBlockingDeque<Runnable>(threadPoolParamter.getPoolQueueSize()), //线程池所使用的缓冲队列
+			  TimeUnit.SECONDS, //线程池维护线程所允许的空闲时间的单位
+			  threadPoolParamter.getPoolQueueSize() <= 0 ? new SynchronousQueue<Runnable>() : new LinkedBlockingDeque<Runnable>(threadPoolParamter.getPoolQueueSize()), //线程池所使用的缓冲队列
 			  new ThreadPoolExecutor.CallerRunsPolicy());//线程池对拒绝任务的处理策略,重试添加当前的任务，他会自动重复调用execute()方法
 		if (Build.VERSION.SDK_INT > 10) {
 			this.allowCoreThreadTimeOut(threadPoolParamter.isAllowCoreThreadTimeOut());

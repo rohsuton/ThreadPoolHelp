@@ -22,22 +22,22 @@ public enum ThreadPoolParams {
 	/**
 	 * json网络请求线程池
 	 */
-	jsonHttpThreadPool(ThreadPoolConst.THREAD_TYPE_SIMPLE_HTTP,10,40,ThreadPoolConst.KEEP_ALIVE_TIME, 10000, false),
+	jsonHttpThreadPool(ThreadPoolConst.THREAD_TYPE_SIMPLE_HTTP, ThreadPoolConst.DEFAULT_CORE_POOL_SIZE,Integer.MAX_VALUE,ThreadPoolConst.KEEP_ALIVE_TIME, 0, false),
 	
 	/**
 	 * 文件传输线程池
 	 */
-	fileHttpThreadPool(ThreadPoolConst.THREAD_TYPE_FILE_HTTP,15,40,ThreadPoolConst.KEEP_ALIVE_TIME, 10000, false),
+	fileHttpThreadPool(ThreadPoolConst.THREAD_TYPE_FILE_HTTP, ThreadPoolConst.DEFAULT_CORE_POOL_SIZE,40,ThreadPoolConst.KEEP_ALIVE_TIME, 10, true),
 	
 	/**
 	 * 工作线程池
 	 */
-	workThreadPool(ThreadPoolConst.THREAD_TYPE_WORK,10,40,ThreadPoolConst.KEEP_ALIVE_TIME, 10000, false),
+	workThreadPool(ThreadPoolConst.THREAD_TYPE_WORK, ThreadPoolConst.DEFAULT_CORE_POOL_SIZE, Integer.MAX_VALUE, ThreadPoolConst.KEEP_ALIVE_TIME, 0, false),
 	
 	/**
 	 * 其他线程
 	 */
-	othersThreadPool(ThreadPoolConst.THREAD_TYPE_OTHERS,10,10,ThreadPoolConst.KEEP_ALIVE_TIME, 10000, false);
+	othersThreadPool(ThreadPoolConst.THREAD_TYPE_OTHERS, ThreadPoolConst.DEFAULT_CORE_POOL_SIZE,Integer.MAX_VALUE,ThreadPoolConst.KEEP_ALIVE_TIME, 0, false);
 	
 	/**
 	 * 核心线程大小:线程池中存在的线程数，包括空闲线程(就是还在存活时间内，没有干活，等着任务的线程)

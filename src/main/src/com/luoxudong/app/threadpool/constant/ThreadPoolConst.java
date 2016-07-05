@@ -37,10 +37,15 @@ public class ThreadPoolConst {
 	public static final int THREAD_TYPE_OTHERS = 3;
 	
 	/**
-	 * 空闲线程存活时间,5秒
+	 * 空闲线程存活时间,60秒
 	 */
-	public static final long KEEP_ALIVE_TIME = 5000;
+	public static final long KEEP_ALIVE_TIME = 60;
 
+	/**
+	 * 默认核心线程池大小
+	 */
+	public final static int DEFAULT_CORE_POOL_SIZE = 3;
+	
 	/**
 	 * 有界队列长度
 	 */
