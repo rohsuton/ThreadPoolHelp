@@ -13,6 +13,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
+import com.luoxudong.app.threadpool.ThreadPoolType;
+
 /** 
  * <pre>
  * ClassName: ScheduledBuilder
@@ -33,12 +35,17 @@ public class ScheduledBuilder extends ThreadPoolBuilder<ExecutorService> {
 	}
 	
 	@Override
+	protected ThreadPoolType getType() {
+		return ThreadPoolType.SCHEDULED;
+	}
+	
+	@Override
 	public ScheduledExecutorService builder() {
-		if (mThreadPoolMap.get(mPoolName) != null) {
-			mExecutorService = (ScheduledExecutorService)mThreadPoolMap.get(mPoolName);
+		if (mThreadPoolMap.get(getType() + "_" + mPoolName) != null) {
+			mExecutorService = (ScheduledExecutorService)mThreadPoolMap.get(getType() + "_" + mPoolName);
 		} else {
 			mExecutorService = create();
-			mThreadPoolMap.put(mPoolName, mExecutorService);
+			mThreadPoolMap.put(getType() + "_" + mPoolName, mExecutorService);
 		}
 		return mExecutorService;
 	}

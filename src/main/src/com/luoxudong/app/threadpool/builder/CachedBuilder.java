@@ -12,6 +12,8 @@ package com.luoxudong.app.threadpool.builder;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.luoxudong.app.threadpool.ThreadPoolType;
+
 /** 
  * <pre>
  * ClassName: CachedBuilder
@@ -25,5 +27,10 @@ public class CachedBuilder extends ThreadPoolBuilder<ExecutorService> {
 	@Override
 	protected ExecutorService create() {
 		return Executors.newCachedThreadPool();
+	}
+
+	@Override
+	protected ThreadPoolType getType() {
+		return ThreadPoolType.CACHED;
 	}
 }

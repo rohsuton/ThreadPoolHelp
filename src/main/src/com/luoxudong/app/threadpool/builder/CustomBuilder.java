@@ -15,6 +15,8 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import com.luoxudong.app.threadpool.ThreadPoolType;
+
 /** 
  * <pre>
  * ClassName: CustomBuilder
@@ -38,6 +40,11 @@ public class CustomBuilder extends ThreadPoolBuilder<ExecutorService> {
 	@Override
 	protected ExecutorService create() {
 		return new ThreadPoolExecutor(mCorePoolSize, mMaximumPoolSize, mKeepAliveTime, mUnit, mWorkQueue);
+	}
+	
+	@Override
+	protected ThreadPoolType getType() {
+		return ThreadPoolType.CUSTOM;
 	}
 	
 	public CustomBuilder corePoolSize(int corePoolSize) {

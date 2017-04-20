@@ -12,6 +12,8 @@ package com.luoxudong.app.threadpool.builder;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.luoxudong.app.threadpool.ThreadPoolType;
+
 /** 
  * <pre>
  * ClassName: FixedBuilder
@@ -29,6 +31,11 @@ public class FixedBuilder extends ThreadPoolBuilder<ExecutorService> {
 		return Executors.newFixedThreadPool(mSize);
 	}
 
+	@Override
+	protected ThreadPoolType getType() {
+		return ThreadPoolType.FIXED;
+	}
+	
 	public FixedBuilder setSize(int size) {
 		mSize = size;
 		return this;

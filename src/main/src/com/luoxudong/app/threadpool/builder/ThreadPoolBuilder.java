@@ -13,6 +13,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 
+import com.luoxudong.app.threadpool.ThreadPoolType;
+
 /** 
  * <pre>
  * ClassName: ThreadPoolBuilder
@@ -22,25 +24,27 @@ import java.util.concurrent.ExecutorService;
  * </pre>
  */
 public abstract class ThreadPoolBuilder<T extends ExecutorService> {
-	protected Map<String, ExecutorService> mThreadPoolMap = new ConcurrentHashMap<String, ExecutorService>();
+	protected static Map<String, ExecutorService> mThreadPoolMap = new ConcurrentHashMap<String, ExecutorService>();
 	protected ExecutorService mExecutorService = null;
 	
 	protected String mPoolName = "default";
-	
 	protected abstract T create();
+	protected abstract ThreadPoolType getType();
 
 	public ExecutorService builder() {
-		if (mThreadPoolMap.get(mPoolName) != null) {
-			mExecutorService = mThreadPoolMap.get(mPoolName);
+		if (mThreadPoolMap.get(getType() + "_" + mPoolName) != null) {
+			mExecutorService = mThreadPoolMap.get(getType() + "_" + mPoolName);
 		} else {
 			mExecutorService = create();
-			mThreadPoolMap.put(mPoolName, mExecutorService);
+			mThreadPoolMap.put(getType() + "_" + mPoolName, mExecutorService);
 		}
 		return mExecutorService;
 	}
 	
 	public ThreadPoolBuilder<T> poolName(String poolName) {
-		mPoolName = poolName;
+		if (poolName != null && poolName.length() > 0) {
+			mPoolName = poolName;
+		}
 		return this;
 	}
 }
