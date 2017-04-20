@@ -9,9 +9,6 @@
  */
 package com.luoxudong.app.threadpool;
 
-import com.luoxudong.app.singletonfactory.SingletonFactory;
-import com.luoxudong.app.threadpool.interfaces.IThreadPoolManager;
-import com.luoxudong.app.threadpool.manager.ThreadPoolManager;
 
 /** 
  * ClassName: ThreadPoolFactory
@@ -20,8 +17,13 @@ import com.luoxudong.app.threadpool.manager.ThreadPoolManager;
  * Date: 2015年7月13日 上午10:37:27
  */
 public class ThreadPoolFactory {
-	public static IThreadPoolManager getThreadPoolManager()
-	{
-		return SingletonFactory.getInstance(ThreadPoolManager.class);
+	public static void getThreadPoolManager() {
+		new ThreadTaskObject() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}
+		};
 	}
 }
