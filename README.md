@@ -69,8 +69,8 @@ ThreadPoolHelp.Builder
 使用默认线程池，size为固定线程池大小
 ```
 ExecutorService executorService = ThreadPoolHelp.Builder
-								  .fixed(size)
-								  .builder();
+				  .fixed(size)
+				  .builder();
 ```
 ```
 executorService.execute(new Runnable() {
@@ -82,9 +82,9 @@ executorService.execute(new Runnable() {
 使用指定线程池，poolName为线程池名称，size为固定线程大小
 ```
 ExecutorService executorService = ThreadPoolHelp.Builder
-								  .fixed(size)
-								  .name("poolName")
-							      .builder();
+				  .fixed(size)
+				  .name("poolName")
+				  .builder();
 ```
 
 ```
@@ -132,8 +132,8 @@ ThreadPoolHelp.Builder
 
 ```
 ScheduledExecutorService executorService = ThreadPoolHelp.Builder
-									       .schedule(size)
-										   .scheduleBuilder();
+					  .schedule(size)
+					  .scheduleBuilder();
 ```
 
 ```
@@ -150,12 +150,12 @@ executorService.schedule(new Runnable() {
 
 ```
 ExecutorService executorService = ThreadPoolHelp.Builder
-								  .custom(corePoolSize, 
-								          maximumPoolSize, 
-										  keepAliveTime, 
-										  unit, 
-										  workQueue)
-							 	  .builder());
+				  .custom(corePoolSize, 
+					  maximumPoolSize, 
+					  keepAliveTime, 
+					  unit, 
+					  workQueue)
+				  .builder());
 ```
 
 ```
