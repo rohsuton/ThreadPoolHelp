@@ -39,7 +39,10 @@ new ThreadTaskObject("newPool") {
 
 使用默认线程池
 ```
-ThreadPoolHelp.Builder.cached().builder().execute(new Runnable() {
+ThreadPoolHelp.Builder
+.cached()
+.builder()
+.execute(new Runnable() {
 	@Override
 	public void run() {
 		//线程执行体
@@ -48,7 +51,11 @@ ThreadPoolHelp.Builder.cached().builder().execute(new Runnable() {
 
 使用指定线程池，poolName为线程池名称
 ```
-ThreadPoolHelp.Builder.cached().name("poolName").builder().execute(new Runnable() {
+ThreadPoolHelp.Builder
+.cached()
+.name("poolName")
+.builder()
+.execute(new Runnable() {
 	@Override
 	public void run() {
 		//线程执行体
@@ -61,7 +68,9 @@ ThreadPoolHelp.Builder.cached().name("poolName").builder().execute(new Runnable(
 
 使用默认线程池，size为固定线程池大小
 ```
-ExecutorService executorService = ThreadPoolHelp.Builder.fixed(size).builder();
+ExecutorService executorService = ThreadPoolHelp.Builder
+.fixed(size)
+.builder();
 ```
 ```
 executorService.execute(new Runnable() {
@@ -72,7 +81,10 @@ executorService.execute(new Runnable() {
 ```
 使用指定线程池，poolName为线程池名称，size为固定线程大小
 ```
-ExecutorService executorService = ThreadPoolHelp.Builder.fixed(size).name("poolName").builder();
+ExecutorService executorService = ThreadPoolHelp.Builder
+.fixed(size)
+.name("poolName")
+.builder();
 ```
 
 ```
@@ -90,7 +102,10 @@ executorService.execute(new Runnable() {
 
 使用 默认线程池
 ```
-ThreadPoolHelp.Builder.single().builder().execute(new Runnable() {
+ThreadPoolHelp.Builder
+.single()
+.builder()
+.execute(new Runnable() {
 	@Override
 	public void run() {
 		//线程执行体
@@ -100,7 +115,11 @@ ThreadPoolHelp.Builder.single().builder().execute(new Runnable() {
 使用指定线程池，poolName为线程池名称
 
 ```
-ThreadPoolHelp.Builder.single().name("poolName").builder().execute(new Runnable() {
+ThreadPoolHelp.Builder
+.single()
+.name("poolName")
+.builder()
+.execute(new Runnable() {
 	@Override
 	public void run() {
 		//线程执行体
@@ -112,7 +131,9 @@ ThreadPoolHelp.Builder.single().name("poolName").builder().execute(new Runnable(
 该线程池的特点是，支持定时及周期性任务执行。
 
 ```
-ScheduledExecutorService executorService = ThreadPoolHelp.Builder.schedule(size).scheduleBuilder();
+ScheduledExecutorService executorService = ThreadPoolHelp.Builder
+.schedule(size)
+.scheduleBuilder();
 ```
 
 ```
@@ -128,7 +149,9 @@ executorService.schedule(new Runnable() {
 该线程池的特点是，如果以上都不能满足需求，开发者可以根据需求自己设置参数。
 
 ```
-ExecutorService executorService = ThreadPoolHelp.Builder.custom(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue).builder());
+ExecutorService executorService = ThreadPoolHelp.Builder
+.custom(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue)
+.builder());
 ```
 
 ```
