@@ -2,6 +2,8 @@
 
 ThreadPoolHelp是一款Android平台下简单易用的线程池管理工具，包大小只有9K，能满足常用的多线程管理需求
 
+下载 [ThreadPoolHelp-2.0.jar](https://github.com/rohsuton/ThreadPoolHelp/blob/master/libs/ThreadPoolHelp-2.0.jar)
+
 ### 简单用法
 
 - 使用默认线程池
